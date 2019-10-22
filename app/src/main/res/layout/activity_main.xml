@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.example.asifahmed.databindinglibrarytest.DataClass"></variable>
+
+        <variable
+            name="dataTwo"
+            type="com.example.asifahmed.databindinglibrarytest.DataClassTwo"></variable>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{data.name, default="Placeholder text"}' />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{dataTwo.name, default="Placeholder text"}' />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="30dp"
+            android:text='@{String.valueOf(data.observableInt.get()), default="Placeholder text"}'
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+</layout>
